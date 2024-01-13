@@ -1,11 +1,12 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
 }
-body{
+
+body {
     background-color: bisque;
 }
 
@@ -16,16 +17,16 @@ header {
     text-align: center;
 }
 
-#nav-bar{
+#nav-bar {
     float: left;
     width: 250px;
     background-color: #424769;
     height: 100vh;
-    
+
 
 }
 
-#profile{
+#profile {
     height: 250px;
     width: 200px;
     border: 5px double white;
@@ -34,16 +35,17 @@ header {
     padding: 2.5rem;
 }
 
-.img{
+.img {
     margin-bottom: 1rem;
     width: 100px;
 }
 
-#buttons{
+#buttons {
     display: flex;
     flex-direction: column;
 }
-.button{
+
+.button {
     background-color: #716F81;
     color: white;
     padding: 10px;
@@ -53,15 +55,24 @@ header {
     border-radius: 12px;
 }
 
-#container{
+#container {
     height: 750px;
     width: 100%;
     background-color: #EEF0E5;
 
 }
 
-#wallet{
-    float:right;
+#wallet {
+    float: right;
+    padding: 10px;
+    margin: 4rem;
+    background-color: #A25772;
+    color: white;
+    text-align: center;
+}
+
+#contract {
+    float: right;
     padding: 10px;
     margin: 4rem;
     background-color: #A25772;
