@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-color: bisque;
+}
+
+header {
+    background-color: #424769;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#nav-bar{
+    float: left;
+    width: 250px;
+    background-color: #424769;
+    height: 100vh;
+    
+
+}
+
+#profile{
+    height: 250px;
+    width: 200px;
+    border: 5px double white;
+    margin-left: 1.6rem;
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+}
+
+.img{
+    margin-bottom: 1rem;
+    width: 100px;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: column;
+}
+.button{
+    background-color: #716F81;
+    color: white;
+    padding: 10px;
+    margin: 0.6em 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+#container{
+    height: 750px;
+    width: 100%;
+    background-color: #EEF0E5;
+
+}
+
+#wallet{
+    float:right;
+    padding: 10px;
+    margin: 4rem;
+    background-color: #A25772;
+    color: white;
+    text-align: center;
+}
