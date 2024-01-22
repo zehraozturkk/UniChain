@@ -10,23 +10,106 @@
 
 <body>
     <header>UNICHAIN</header>
-    <div id="nav-bar">
-        <div id="profile">
-            <img class="img" src="./undefinedimg.png" alt="someone">
-            <p>Name: ZEHRA</p>
-            <p>Surname: OZ</p>
-        </div>
-        <div id="buttons">
 
-            <button class="button">Reservation</button>
-            <button class="button">Money Operations</button>
-            <button class="button">My Meals</button>
-        </div>
+    <div id="login">
+        <form action="">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </form>
+        <button class="button" id="login_button">login</button>
     </div>
-    <div id="container">
-        <button onclick="connectToMetamask()" class="button" id="wallet">CONNECT TO METAMASK</button>
-        <button onclick="connectToContract()" class="button" id="contract">CONNECT TO SMARTCONTRACT</button>
-        <div id="main"></div>
+    <div id="sayfa">
+        <div id="nav-bar">
+            <div id="profile">
+                <img class="img" src="./undefinedimg.png" alt="someone">
+                <p>Name: ZEHRA</p>
+                <p>Surname: OZ</p>
+            </div>
+            <button class="button" id="log_out">log_out</button>
+            <div id="buttons">
+
+                <button class="button" id="meals">Meals</button>
+                <button class="button" id="reservation">Reservation</button>
+                <button class="button">Money Operations</button>
+                <button onclick="connectToMetamask()" class="button" id="wallet">CONNECT TO METAMASK</button>
+                <button onclick="connectToContract()" class="button" id="contract">CONNECT TO SMARTCONTRACT</button>
+            </div>
+        </div>
+        <div id="container">
+            <div id="main">
+                <div id="card">
+                    <div id="cardsofmeal">
+                        <div class="card">
+                            <h4>01.01 MONDAY</h4>
+                            <p>domates çorbası</p>
+                            <p>pilav</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>02.01 TUESDAY</h4>
+                            <p>tarhana</p>
+                            <p>karnıyarık</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>03.01 WEDNESDAY</h4>
+                            <p>mercimek çorbası</p>
+                            <p>pilav</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>04.01 THURSDAY</h4>
+                            <p>yayla çorbası</p>
+                            <p>pilav</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>05.01 FRİDAY</h4>
+                            <p>tutmaç çorbası</p>
+                            <p>pilav</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>06.01 MONDAY</h4>
+                            <p>domates çorbası</p>
+                            <p>pilav</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>07.01 TUESDAY</h4>
+                            <p>tarhana</p>
+                            <p>karnıyarık</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>08.01 WEDNESDAY</h4>
+                            <p>mercimek çorbası</p>
+                            <p>pilav</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>09.01 THURSDAY</h4>
+                            <p>yayla çorbası</p>
+                            <p>pilav</p>
+                            <p>salata</p>
+                        </div>
+                        <div class="card">
+                            <h4>10.01 FRİDAY</h4>
+                            <p>tutmaç çorbası</p>
+                            <p>pilav</p>
+                            <p>salata</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
     </div>
 
 

@@ -176,3 +176,51 @@ const connectToContract = async () => {
     window.contract = await new window.web3.eth.Contract(ABI, Address);
     console.log("Burdayuj");
 }
+
+document.getElementById("login_button").addEventListener("click", () => {
+    const sayfa = document.getElementById("sayfa");
+    const login = document.getElementById("login");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+
+    const enteredUsername = username.value;
+    const enteredPassword = password.value;
+
+    if (enteredUsername === 'a' && enteredPassword === 'a') {
+        if (sayfa && login) {
+            if (sayfa.classList.contains("active")) {
+                sayfa.classList.remove("active");
+                login.classList.remove("unactive");
+            } else {
+                sayfa.classList.add("active");
+                login.classList.add("unactive");
+            }
+        }
+    } else {
+        alert("Invalid username or password");
+    }
+});
+
+document.getElementById("meals").addEventListener("click", () => {
+    const cards = document.getElementById("card");
+    if (cards) {
+        if (cards.classList.contains("active")) {
+            cards.classList.remove("active");
+        } else {
+            cards.classList.add("active");
+        }
+    }
+})
+document.getElementById("log_out").addEventListener('click', () => {
+    const sayfa = document.getElementById("sayfa");
+    const login = document.getElementById("login");
+    if (sayfa && login) {
+        if (sayfa.classList.contains("active")) {
+            sayfa.classList.remove("active");
+            login.classList.remove("unactive");
+        } else {
+            login.classList.add("unactive");
+        }
+    }
+
+})
