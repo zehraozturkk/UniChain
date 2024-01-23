@@ -1,88 +1,55 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract UniChain {
-    address public owner; // Kontrat sahibi
-    mapping(address => uint256) public balances; // Kullanıcı bakiyeleri
+import "./IERC20.sol";
 
-    event Deposit(address indexed user, uint256 amount, uint256 newBalance);
-    event SendMoney(
-        address indexed sender,
-        address indexed recipient,
-        uint256 amount,
-        uint256 senderBalance,
-        uint256 recipientBalance
+contract DiningHall {
+    address public admin;
+    IERC20 public token;
+
+    event BuyMeal(
+        address indexed buyer,
+        uint256 ethAmount,
+        uint256 tokenAmount
     );
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "You are not the owner");
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Only admin calls");
         _;
     }
 
-    constructor() {
-        owner = msg.sender;
+    constructor(address _tokenAddress) {
+        admin = msg.sender;
+        token = IERC20(_tokenAddress);
     }
 
-    // Kullanıcı hesabına bakiye eklemek için
-    function deposit() external payable {
-        require(msg.value > 0, "Deposit amount must be greater than 0");
-        balances[msg.sender] += msg.value;
-        emit Deposit(msg.sender, msg.value, balances[msg.sender]);
+    function getUserTokenBalance(
+        address account
+    ) public view returns (uint256) {
+        // Kullanıcının token bakiyesini almak için bu fonksiyonu kullanabilirsiniz
+        return token.balanceOf(account);
     }
 
-    // Yemek alımı işlemi
-    function buyFood() external payable {
-        require(msg.value > 0, "Payment amount must be greater than 0");
+    function buyMealWithTokens(uint256 _tokenAmount) external {
+        require(_tokenAmount > 0, "Invalid token amount");
 
-        // Yemek fiyatını belirleyin (örneğin, 1 ETH)
-        uint256 foodPrice = 1 ether;
-        require(msg.value >= foodPrice, "Insufficient payment");
-
-        // Kullanıcı bakiyesinden ödeme düşülüyor
-        balances[msg.sender] -= foodPrice;
-
-        // Ek işlemleri buraya ekleyebilirsiniz (örneğin, yemekhane sistemi tarafından kayıt tutma)
-
-        // Eğer fazladan para varsa, kullanıcıya geri ödeme yapabilirsiniz
-        uint256 change = msg.value - foodPrice;
-        if (change > 0) {
-            payable(msg.sender).transfer(change);
-        }
-    }
-
-    // Arkadaşa para gönderme işlemi
-    function sendMoney(address recipient, uint256 amount) external {
-        require(amount > 0, "Amount must be greater than 0");
-        require(balances[msg.sender] >= amount, "Insufficient balance");
-
-        balances[msg.sender] -= amount;
-        balances[recipient] += amount;
-
-        emit SendMoney(
-            msg.sender,
-            recipient,
-            amount,
-            balances[msg.sender],
-            balances[recipient]
-        );
-    }
-
-    // Kullanıcının bakiyesini kontrol etmek için
-    function getBalance() external view returns (uint256) {
-        return balances[msg.sender];
-    }
-
-    // Kontrat sahibinin bakiyesini çekmek için (sadece kontrat sahibi)
-    function withdrawBalance(uint256 amount) external onlyOwner {
+        // Kullanıcının yeterli miktarda tokena sahip olup olmadığını kontrol et
         require(
-            amount <= address(this).balance,
-            "Insufficient contract balance"
+            getUserTokenBalance(msg.sender) >= _tokenAmount,
+            "Insufficient balance"
         );
-        payable(owner).transfer(amount);
+
+        // Kullanıcının tokenları bu akıllı kontrata aktar
+        require(
+            token.transferFrom(msg.sender, address(this), _tokenAmount),
+            "Token transfer failed"
+        );
+
+        // Burada yemek alma işlemleri gerçekleştirilebilir
+        // Örneğin, belirli bir miktarda yemek verilebilir
+
+        emit BuyMeal(msg.sender, 0, _tokenAmount); // Burada ethAmount 0 olarak belirtilmiştir, çünkü ETH alımı olmadan sadece token ile işlem gerçekleşiyor.
     }
 
-    // Diğer gerekli fonksiyonları buraya ekleyebilirsiniz
-    function selam() public pure returns (string memory) {
-        return "Selam!";
-    }
+    // Diğer fonksiyonlar...
 }
