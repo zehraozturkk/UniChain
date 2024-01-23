@@ -1,3 +1,4 @@
+
 let account;
 
 //Connect metamask wallet with my page
@@ -224,3 +225,5 @@ document.getElementById("log_out").addEventListener('click', () => {
     }
 
 })
+
+
