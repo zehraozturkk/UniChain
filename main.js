@@ -7,7 +7,7 @@ const connectToMetamask = async () => {
         try {
             const accounts = await ethereum.request({ method: "eth_requestAccounts" });
             const account = accounts[0];
-            document.getElementById("accountArea").innerHTML = account;
+
         } catch (error) {
             console.error("Error connecting to Metamask:", error);
         }
