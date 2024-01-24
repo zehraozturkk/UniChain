@@ -1,12 +1,9 @@
-const Yemekhane = artifacts.require("Yemekhane");
-const IERC20Token = artifacts.require("IERC20Token");
+const TokenExchange = artifacts.require("TokenExchange");
 
 module.exports = function (deployer) {
-  const name = "MyToken";
-  const symbol = "MTK";
-  const initialSupply = 1000000; // Örnek bir başlangıç arzı
+  const newName = "NewTokenName";
+  const newSymbol = "NTN";
+  const tokenAddress = "0x5F3c884e8D9096271dEDe693e4A2EC6647dB86B9"; // ERC-20 token adresini gerçek bir değerle değiştirin
 
-  deployer.deploy(IERC20Token, name, symbol, initialSupply).then(() => {
-    return deployer.deploy(Yemekhane, IERC20Token.address);
-  });
+  deployer.deploy(TokenExchange, newName, newSymbol, tokenAddress);
 };

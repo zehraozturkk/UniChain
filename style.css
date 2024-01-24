@@ -187,3 +187,52 @@ input {
 #login_button {
     width: 95%;
 }
+
+#reservation_card {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#reservation_card.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+#reservation_card {
+    position: absolute;
+    height: 450px;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+
+#reservation_card form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#reservation_card div {
+    background-color: #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+#reservation_card button {
+    background-color: #424769;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#reservation_card button:hover {
+    background-color: #333;
+}
