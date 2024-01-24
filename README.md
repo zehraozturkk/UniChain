@@ -1,47 +1,112 @@
 # UniChain
-[en:]
 
-Introduction
+## Introduction
 
-It is as wrong as it is right to say that blockchain technology is the technology of the future, because the future is today. Especially in a time when online payments are becoming widespread, transparency in daily activities such as food orders is becoming even more important. However, while this technology is so reliable, why is it not widely used and it is thought to be an opportunity to popularize blockchain, starting with young people.
-Integrating blockchain technology into cafeteria systems, which is a problem faced by universities, is one of the most feasible solutions that come to mind to popularize this technology. In this way, transparency in food purchases will be ensured and the use of blockchain among university students will be popularized.
+Blockchain technology is not just the technology of the future; it's the technology of today. As online payments become widespread, transparency in daily activities, such as food orders, becomes increasingly important. Despite its reliability, blockchain technology is not as widely used as it could be. UniChain seeks to seize the opportunity to popularize blockchain, starting with young people.
 
-University cafeteria systems manage weekly food purchases for a set fee. However, there are some limitations and problems with payments, such as the inability to transfer money between two people, buying food before a certain day, or losing money for food you have not eaten. Payments made using tokens aim to reduce the risk of money being lost by offering a more convenient process. Some of the problems experienced among students will be overcome with the ease of blockchain technology.
-In this way, both the dissemination of blockchain technology and transparency in cafeteria systems will be ensured. Each university will be able to manage its own system and the need for external intermediaries, such as banks, will be reduced.
+Integrating blockchain technology into university cafeteria systems addresses a common issue faced by universities. This solution aims to popularize blockchain by ensuring transparency in food purchases and providing a convenient and secure payment process using tokens. UniChain envisions overcoming challenges in current cafeteria systems, reducing the risk of lost money, and promoting blockchain use among university students.
 
-This is our project model:
+This project model overview:
 
-![image](https://github.com/zehraozturkk/UniChain/assets/101568897/ac251356-b07e-4471-a77f-c537f713a149)
+![UniChain Model](https://github.com/zehraozturkk/UniChain/assets/101568897/ac251356-b07e-4471-a77f-c537f713a149)
 
-Technologies We Used:
+## Technologies We Used
 
-HTML, CSS: Used for the design of the user interface.
-JavaScript: Applied for developing the user interface and calling the smartcontracts.
-Solidity: Utilized for writing smart contracts.
-Truffle: Employed for compiling and migrating smart contracts.
-Ganache: Offers a local blockchain for testing purposes.
-MetaMask: A browser extension utilized for interacting with the Ethereum blockchain.
+- **HTML, CSS:** Design of the user interface.
+- **JavaScript:** Development of the user interface and calling smart contracts.
+- **Solidity:** Writing smart contracts.
+- **Truffle:** Compiling and migrating smart contracts.
+- **Ganache:** Local blockchain for testing purposes.
+- **MetaMask:** Browser extension for interacting with the Ethereum blockchain.
 
-
-Instructions for running this project :
-
+## Instructions for Running this Project
 
 1. Clone and open the codes.
 
-2. We use Ganache for create a test account.So please download ganache.And after the download ganache you can run this code for see your accounts and informations.
-ganache-cli
+2. Use Ganache to create a test account. Download Ganache and run the following code to see your accounts and information:
 
-3. Open your Metamask and add another acount.This account must be connected with your Ganache account.For this way you can use yhis account for testing.
+    ```
+    ganache-cli
+    ```
 
-4. You have to connect metamask to our webpage for token operations.In our webpage you can see CONNECT METAMASK button.You can click this button for connectiın.
+3. Open your MetaMask and add another account connected to your Ganache account for testing.
 
-5. We want to use smartconract functions.So you can deployed your contract using Truffle.Before that you can intall truffle.
+4. Connect MetaMask to our webpage for token operations. Click the "CONNECT METAMASK" button on our webpage.
 
-6. After the installation run this command.
+5. Deploy your contract using Truffle. Before that, install Truffle:
 
-truffle deploy
+    ```
+    npm install -g truffle
+    ```
 
-7. After the deployment you can see in your terminal the contract address.Take this address and take abi and paste in your  main.js 
+6. After the installation, run this command:
 
-8. Now if you give the correct address and abi you can use your contrat's function.If you click the Reservation button in our Webpage and click the buttons for reservation Metamask wallet should ask you for permisson about operation.
+    ```
+    truffle deploy
+    ```
+
+7. After deployment, you'll see the contract address in your terminal. Take this address and the ABI and paste them into your `main.js`.
+
+8. Now, with the correct address and ABI, you can use your contract's functions. Click the "Reservation" button on our webpage, and when prompted by MetaMask, grant permission for the operation.
+
+   
+<p align="left">
+  <img src="https://github.com/zehraozturkk/UniChain/assets/95762073/bdc95edd-0530-47f9-aaea-2849a2c52913" alt="Ekran Görüntüsü" width="300",height="300"/>
+  
+</p>
+
+# UniChain
+
+## Giriş
+
+Blockchain teknolojisi sadece geleceğin teknolojisi değil, bugünün teknolojisi. Çevrimiçi ödemeler yaygınlaştıkça, yemek siparişleri gibi günlük faaliyetlerde şeffaflık daha da önemli hale geliyor. Güvenilir olmasına rağmen, blockchain teknolojisi neden daha yaygın olarak kullanılmıyor ve bu teknolojiyi gençlerle başlayarak popülerleştirmenin bir fırsat olduğu düşünülüyor.
+
+Blockchain teknolojisinin üniversitelerin karşılaştığı yaygın bir sorun olan yemekhane sistemlerine entegre edilmesi, bu teknolojiyi popülerleştirmek için akla gelen en gerçekçi çözümlerden biridir. Bu şekilde, yemek alımlarında şeffaflık sağlanacak ve üniversite öğrencileri arasında blockchain kullanımı yaygınlaştırılacaktır.
+
+Bu proje modeli genel bakış:
+
+![UniChain Model](https://github.com/zehraozturkk/UniChain/assets/101568897/ac251356-b07e-4471-a77f-c537f713a149)
+
+## Kullandığımız Teknolojiler
+
+- **HTML, CSS:** Kullanıcı arayüzünün tasarımı.
+- **JavaScript:** Kullanıcı arayüzünün geliştirilmesi ve akıllı kontratların çağrılması.
+- **Solidity:** Akıllı kontratların yazımı.
+- **Truffle:** Akıllı kontratların derlenmesi ve taşınması için kullanıldı.
+- **Ganache:** Test amaçlı yerel bir blockchain sağlar.
+- **MetaMask:** Ethereum blockchain ile etkileşim için kullanılan bir tarayıcı eklentisi.
+
+## Bu Projeyi Çalıştırma Talimatları
+
+1. Kodları klonlayın ve açın.
+
+2. Test hesabı oluşturmak için Ganache kullanın. Ganache'yi indirin ve aşağıdaki kodu çalıştırarak hesaplarınızı ve bilgilerinizi görebilirsiniz:
+
+    ```
+    ganache-cli
+    ```
+
+3. MetaMask'ınızı açın ve test için Ganache hesabınıza bağlı başka bir hesap ekleyin.
+
+4. Token işlemleri için MetaMask'ı web sayfamıza bağlayın. Web sayfamızdaki "METAMASK'I BAĞLA" düğmesine tıklayabilirsiniz.
+
+5. Truffle kullanarak kontratınızı dağıtın. Öncesinde Truffle'ı yükleyin:
+
+    ```
+    npm install -g truffle
+    ```
+
+6. Kurulumun ardından bu komutu çalıştırın:
+
+    ```
+    truffle deploy
+    ```
+
+7. Dağıtımdan sonra kontrat adresini terminalinizde göreceksiniz. Bu adresi ve ABI'yi alın ve bunları `main.js` dosyanıza yapıştırın.
+
+8. Şimdi, doğru adres ve ABI ile kontratınızın fonksiyonlarını kullanabilirsiniz. Web sayfamızdaki "Rezervasyon" düğmesine tıklayın ve MetaMask tarafından işlem için izin istendiğinde izin verin.
+
+<p align="left">
+  <img src="https://github.com/zehraozturkk/UniChain/assets/95762073/bdc95edd-0530-47f9-aaea-2849a2c52913" alt="Ekran Görüntüsü" width="300" height="300"/>
+</p>
 
