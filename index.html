@@ -12,14 +12,16 @@
 <body>
     <header>UNICHAIN</header>
 
+
+
     <div id="login">
         <form action="">
-            <img src="./meal.png" height="200px">
+            <img src="./images/meal.png" height="150px">
             <br>
             <h1 style="color: #424769;">Welcome the UniChain</h1>
             <br>
 
-            <label for="username">Username:</label>
+            <label for="username">School id:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Password:</label>
@@ -30,17 +32,17 @@
     <div id="sayfa">
         <div id="nav-bar">
             <div id="profile">
-                <img class="img" src="./user.png" alt="someone">
+                <img class="img" src="./images/user.png" alt="someone">
                 <p style="color: white;">Name: ZEHRA</p>
                 <p style="color: white;">Surname: OZ</p>
 
 
             </div>
             <div id="buttons">
+                <button class="button" id="homepage">Home Page</button>
 
                 <button class="button" id="meals">Meals</button>
-                <button class="button" id="reservation">Reservation</button>
-                <button class="button">Money Operations</button>
+                <button class="button" id="reservationbutton">Reservation</button>
                 <div id="accountArea"></div>
                 <button onclick="connectToMetamask()" class="button" id="wallet">CONNECT TO METAMASK</button>
 
@@ -51,6 +53,26 @@
 
         </div>
         <div id="container">
+            <div id="Introduction">
+                <h1>Welcome to UniChain – where the future of university cafeteria
+                    systems begins!</h1>
+                <h3>
+                    UniChain
+                    is a
+                    cutting-edge blockchain solution designed to revolutionize how students interact with their campus
+                    dining experience.<br> By seamlessly integrating blockchain technology into university cafeteria
+                    systems,
+                    UniChain ensures unparalleled transparency, security, and convenience in food purchases.<br> Say
+                    goodbye
+                    to
+                    the limitations of traditional payment methods, and embrace a future where every transaction is
+                    securely
+                    recorded on the blockchain. <br> Join us on this journey to simplify, secure, and enhance the way
+                    students
+                    engage with their campus dining services.
+                </h3>
+
+            </div>
             <div id="card">
                 <div id="cardsofmeal">
                     <div class="card">
@@ -117,14 +139,17 @@
             </div>
             <div id="reservation_card">
                 <form>
-                    <h4>Choose the day you want to reserve:</h4>
-                    <div><button type="button" id="withdrawButton">|_|</button>01.01</div>
-                    <div><button type="button">|_|</button>02.01</div>
-                    <div><button type="button">|_|</button>03.01</div>
-                    <div><button type="button">|_|</button>04.01</div>
-                    <div><button type="button">|_|</button>05.01</div>
-                    <div><button type="button">|_|</button>06.01</div>
-                    <div><button type="button">|_|</button>07.01</div>
+                    <h2 style="color: #424769;">Choose the day you want to reserve:</h2>
+                    <div id="reservation"><button type="button" class="withdrawButton">𓌉◯𓇋</button>01.01 MONDAY</div>
+                    <div id="reservation"><button type="button" class="withdrawButton">𓌉◯𓇋</button>02.01 TUESDAY</div>
+                    <div id="reservation"><button type="button" class="withdrawButton">𓌉◯𓇋</button>03.01 WEDNESDAY
+                    </div>
+                    <div id="reservation"><button type="button" class="withdrawButton">𓌉◯𓇋</button>04.01 THURSDAY
+                    </div>
+                    <div id="reservation"><button type="button" class="withdrawButton">𓌉◯𓇋</button>05.01 FRİDAY</div>
+                    <div id="reservation"><button type="button" class="withdrawButton">𓌉◯𓇋</button>06.01 SATURDAY
+                    </div>
+                    <div id="reservation"><button type="button" class="withdrawButton">𓌉◯𓇋</button>07.01 SUNDAY</div>
 
                 </form>
             </div>

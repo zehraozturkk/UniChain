@@ -434,28 +434,54 @@ document.addEventListener('DOMContentLoaded', async () => {
     const yourMetamaskAddress = accounts[0];
 
     // Butonu seçin
-    const withdrawButton = document.getElementById('withdrawButton');
+    const withdrawButtons = document.querySelectorAll('.withdrawButton');
 
     // Butona tıklanınca withdrawToken fonksiyonunu çağırın
-    withdrawButton.addEventListener('click', async () => {
-        const gasLimit = 100000; // İhtiyaca göre ayarlayın
-        const amountToWithdraw = 1;
 
-        try {
-            const result = await contractInstance.methods.withdrawToken(amountToWithdraw)
-                .send({ from: yourMetamaskAddress, gas: gasLimit });
+    withdrawButtons.forEach((button) => {
+        button.addEventListener('click', async (e) => {
+            const gasLimit = 100000; // İhtiyaca göre ayarlayın
+            const amountToWithdraw = 1;
+            console.log(e);
+            try {
+                const result = await contractInstance.methods.withdrawToken(amountToWithdraw)
+                    .send({ from: yourMetamaskAddress, gas: gasLimit });
 
-            console.log('Transaction Hash:', result.transactionHash);
-            // Başka işlemler veya geri bildirimler burada yapılabilir
-        } catch (error) {
-            console.error('Error:', error);
-        }
+                console.log('Transaction Hash:', result.transactionHash);
+                // Başka işlemler veya geri bildirimler burada yapılabilir
+            } catch (error) {
+                if (error.message.includes("User denied transaction signature")) {
+                    console.log("Kullanıcı işlemi reddetti.");
+                } else {
+                    console.error('Error:', error);
+                }
+            }
+        });
     });
 });
 
+//My Introduction div
+const introductionSection = document.getElementById('Introduction');
+const cards = document.getElementById("card");
+const reservation_card = document.getElementById("reservation_card");
+
+
+
+
+document.getElementById("homepage").addEventListener('click', () => {
+    introductionSection.style.display = 'block';
+
+    reservation_card.classList.remove("active");
+    cards.classList.remove("active");
+
+
+
+
+})
 
 
 document.getElementById("log_out").addEventListener('click', () => {
+    introductionSection.style.display = 'none';
     const sayfa = document.getElementById("sayfa");
     const login = document.getElementById("login");
     if (sayfa && login) {
@@ -470,6 +496,7 @@ document.getElementById("log_out").addEventListener('click', () => {
 })
 
 document.getElementById("meals").addEventListener("click", () => {
+    introductionSection.style.display = 'none';
     const cards = document.getElementById("card");
     const reservation_card = document.getElementById("reservation_card");
     if (reservation_card && cards) {
@@ -483,7 +510,8 @@ document.getElementById("meals").addEventListener("click", () => {
     }
 })
 
-document.getElementById("reservation").addEventListener("click", () => {
+document.getElementById("reservationbutton").addEventListener("click", () => {
+    introductionSection.style.display = 'none';
     const reservation_card = document.getElementById("reservation_card");
     const cards = document.getElementById("card");
     if (reservation_card && cards) {

@@ -201,7 +201,7 @@ input {
 
 #reservation_card {
     position: absolute;
-    height: 450px;
+    height: 500px;
     top: 50%;
     left: 30%;
     transform: translate(-50%, -50%);
@@ -235,4 +235,30 @@ input {
 
 #reservation_card button:hover {
     background-color: #333;
+}
+
+#Introduction {
+    padding-top: 100px;
+    text-align: center;
+    display: block;
+
+}
+
+#Introduction h1 {
+    color: #A25772;
+}
+
+#Introduction h3 {
+    color: #333;
+    padding-top: 30px;
+    line-height: 30px;
+}
+
+#withdrawButton {
+    width: 100px;
+}
+
+#reservation {
+    width: 300px;
+
 }
