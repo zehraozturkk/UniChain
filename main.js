@@ -2,6 +2,7 @@
 let account;
 
 // Connect metamask wallet with my page
+
 const connectToMetamask = async () => {
     if (typeof window.ethereum !== "undefined") {
         try {
@@ -20,6 +21,7 @@ const connectToMetamask = async () => {
 
 
 
+//login function  
 
 document.getElementById("login_button").addEventListener("click", () => {
     const sayfa = document.getElementById("sayfa");
@@ -47,8 +49,9 @@ document.getElementById("login_button").addEventListener("click", () => {
 
 
 //Token operations
+
 const web3 = new Web3(window.ethereum);
-const contractAddress = '0xd5406B4dCFd712A95846E02010b9A4e93ac67977'; // Kontrat adresini gerçek bir değerle değiştirin
+const contractAddress = '0xd5406B4dCFd712A95846E02010b9A4e93ac67977';
 const contractAbi = [{
     "inputs": [
         {
@@ -425,22 +428,21 @@ const contractAbi = [{
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
-}]; // Kontrat ABI'sini ekleyin
+}];
 const contractInstance = new web3.eth.Contract(contractAbi, contractAddress);
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // Web3.js kullanılarak Metamask hesabını alın
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
     const yourMetamaskAddress = accounts[0];
 
-    // Butonu seçin
+
     const withdrawButtons = document.querySelectorAll('.withdrawButton');
 
-    // Butona tıklanınca withdrawToken fonksiyonunu çağırın
+
 
     withdrawButtons.forEach((button) => {
         button.addEventListener('click', async (e) => {
-            const gasLimit = 100000; // İhtiyaca göre ayarlayın
+            const gasLimit = 50000;
             const amountToWithdraw = 1;
             console.log(e);
             try {
@@ -448,7 +450,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     .send({ from: yourMetamaskAddress, gas: gasLimit });
 
                 console.log('Transaction Hash:', result.transactionHash);
-                // Başka işlemler veya geri bildirimler burada yapılabilir
+
             } catch (error) {
                 if (error.message.includes("User denied transaction signature")) {
                     console.log("Kullanıcı işlemi reddetti.");
@@ -466,7 +468,7 @@ const cards = document.getElementById("card");
 const reservation_card = document.getElementById("reservation_card");
 
 
-
+//Home page button
 
 document.getElementById("homepage").addEventListener('click', () => {
     introductionSection.style.display = 'block';
@@ -479,6 +481,7 @@ document.getElementById("homepage").addEventListener('click', () => {
 
 })
 
+//Logout button
 
 document.getElementById("log_out").addEventListener('click', () => {
     introductionSection.style.display = 'none';
@@ -495,6 +498,8 @@ document.getElementById("log_out").addEventListener('click', () => {
 
 })
 
+// Meals button
+
 document.getElementById("meals").addEventListener("click", () => {
     introductionSection.style.display = 'none';
     const cards = document.getElementById("card");
@@ -509,6 +514,8 @@ document.getElementById("meals").addEventListener("click", () => {
         }
     }
 })
+
+//Reservation button
 
 document.getElementById("reservationbutton").addEventListener("click", () => {
     introductionSection.style.display = 'none';
